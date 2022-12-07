@@ -2,6 +2,7 @@ package eu.bonfire.server;
 
 import eu.bonfire.Main;
 
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -56,5 +57,21 @@ public class Server {
             return false;
         }
         return true;
+    }
+
+    /**
+     *
+     * @param port
+     * @return InetAddress
+     */
+    public InetAddress getIp(int port) {
+        ServerSocket serverSocket = null;
+        try {
+            serverSocket = new ServerSocket(port);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        assert serverSocket != null;
+        return serverSocket.getInetAddress();
     }
 }

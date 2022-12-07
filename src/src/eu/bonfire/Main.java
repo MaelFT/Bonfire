@@ -27,6 +27,7 @@ public class Main {
                 break;
             case "Client":
                 client = new Client(Main.instance);
+                client.client(server.getIp(Integer.parseInt(args[1])), Integer.parseInt(args[1]));
                 break;
         }
 
